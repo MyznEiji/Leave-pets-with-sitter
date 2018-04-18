@@ -15,5 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::Auth();
 Route::get('/', 'PagesController@index');
 Route::resource('pages', 'PagesController', ['only' => ['index'] ]);
