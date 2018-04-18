@@ -68,5 +68,18 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+
+    }
+
+
+
+    // Login Notification
+    public function authenticated( \Illuminate\Http\Request $request, \App\User $user ) {
+
+        // flash()->success( 'Logged in', "You have been logged in, {$user->name}" );
+        flash('Success!');
+        // Toast::message('message', 'level', 'title');
+        return redirect()->intended($this->redirectPath());
     }
 }

@@ -131,6 +131,14 @@ nav.navbar.navbar-default {
   }
 }
 
+
+ /* トップページのnavbarのドロップダウンがクリックされた時 */
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: transparent;
+    color: #555;
+}
+
+
 footer {
   padding:20px;
   text-align:center;
@@ -145,4 +153,3 @@ footer h5 {
 div.container.post {
   margin-bottom:50px;
 }
-

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b1485987e7c5949da82435d403e52e8",
+    "content-hash": "989ac514a6c0fd43dfc43547d001ea26",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -161,6 +161,60 @@
             "time": "2017-07-22T12:18:28+00:00"
         },
         {
+            "name": "grimthorr/laravel-toast",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Grimthorr/laravel-toast.git",
+                "reference": "046d9d44e59f552a7be60aefa5c86b255b6d5312"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Grimthorr/laravel-toast/zipball/046d9d44e59f552a7be60aefa5c86b255b6d5312",
+                "reference": "046d9d44e59f552a7be60aefa5c86b255b6d5312",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "5.*",
+                "illuminate/database": "5.*",
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Grimthorr\\LaravelToast\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Toast": "Grimthorr\\LaravelToast\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Grimthorr\\LaravelToast\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grimthorr",
+                    "email": "phil@hughesbox.co.uk",
+                    "homepage": "http://hughesbox.co.uk"
+                }
+            ],
+            "description": "Simple toast messages for Laravel 5.",
+            "homepage": "https://github.com/Grimthorr/laravel-toast",
+            "time": "2018-04-10T11:21:23+00:00"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -306,6 +360,60 @@
             "time": "2018-03-21T22:21:57+00:00"
         },
         {
+            "name": "laracasts/flash",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/flash.git",
+                "reference": "10cd420ab63fd0796bf5e1e5b99f87636d2f4333"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/10cd420ab63fd0796bf5e1e5b99f87636d2f4333",
+                "reference": "10cd420ab63fd0796bf5e1e5b99f87636d2f4333",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "^6.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laracasts\\Flash\\FlashServiceProvider"
+                    ],
+                    "aliases": {
+                        "Flash": "Laracasts\\Flash\\Flash"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Laracasts\\Flash": "src/"
+                },
+                "files": [
+                    "src/Laracasts/Flash/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Easy flash notifications",
+            "time": "2017-06-22T19:01:19+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v5.2.45",
             "source": {
@@ -434,6 +542,60 @@
                 "laravel"
             ],
             "time": "2016-08-26T11:44:52+00:00"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "5a8f1380a0d5ef21cdef37e775d86566307f8358"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/5a8f1380a0d5ef21cdef37e775d86566307f8358",
+                "reference": "5a8f1380a0d5ef21cdef37e775d86566307f8358",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.2.*",
+                "illuminate/routing": "5.2.*",
+                "illuminate/session": "5.2.*",
+                "illuminate/support": "5.2.*",
+                "illuminate/view": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "illuminate/database": "5.2.*",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "http://laravelcollective.com",
+            "time": "2015-12-23T07:46:46+00:00"
         },
         {
             "name": "league/flysystem",
@@ -643,16 +805,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.25.0",
+            "version": "1.26.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4"
+                "reference": "e3d9014279133a3cccc01f6a691322a2d5a6a87b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cbcf13da0b531767e39eb86e9687f5deba9857b4",
-                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e3d9014279133a3cccc01f6a691322a2d5a6a87b",
+                "reference": "e3d9014279133a3cccc01f6a691322a2d5a6a87b",
                 "shasum": ""
             },
             "require": {
@@ -664,14 +826,9 @@
                 "phpunit/phpunit": "^4.8.35 || ^5.7"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.23-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
-                    "Carbon\\": "src/Carbon/"
+                    "": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -692,7 +849,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-03-19T15:50:49+00:00"
+            "time": "2018-04-17T15:35:42+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -911,6 +1068,54 @@
                 "shell"
             ],
             "time": "2016-03-09T05:03:14+00:00"
+        },
+        {
+            "name": "roksta/toast",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roksta21/Toast.git",
+                "reference": "d71cceff15eba5453bfacc689325a1d0f070a99a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roksta21/Toast/zipball/d71cceff15eba5453bfacc689325a1d0f070a99a",
+                "reference": "d71cceff15eba5453bfacc689325a1d0f070a99a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/session": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "helpers/helpers.php"
+                ],
+                "psr-4": {
+                    "Roksta\\Toastr\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "roksta",
+                    "email": "roksta21@gmail.com"
+                }
+            ],
+            "description": "Toastr notifications in laravel",
+            "keywords": [
+                "alert",
+                "laravel notifications",
+                "notifications"
+            ],
+            "time": "2017-04-26T07:55:06+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

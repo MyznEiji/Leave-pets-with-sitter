@@ -1,0 +1,25 @@
+.auth_form
+{
+  margin: 50px auto 100px ;
+}
+
+.form-group label
+{
+  font-size: 20px;
+}
+
+
+.form_color
+{
+  background-color: rgb(246, 246, 246);
+}
+
+
+
+/* notificationの設定 */
+.collapse li .alert
+{
+  background-color: skyblue;
+  opacity: 0.8;
+  color: black;
+}
