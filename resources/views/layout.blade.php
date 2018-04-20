@@ -4,11 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untitled</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <title>Rental Space</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" href="assets/css/user.css">
-    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="/assets/css/user.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
+
+
 
 </head>
 
@@ -33,7 +35,8 @@
                             <span class="caret"></span>
                           </a>
                           <ul class="dropdown-menu" >
-                              <li role="presentation"><a href="/logout">Log Out </a></li>
+                            <li role="presentation"><a href="/users/{{ Auth::user()->id }}">Profile</a></li>
+                            <li role="presentation"><a href="/logout">Log Out </a></li>
                           </ul>
                         </li>
                       @endif

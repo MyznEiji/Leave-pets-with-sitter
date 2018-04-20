@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::Auth();
 Route::get('/', 'PagesController@index');
 Route::resource('pages', 'PagesController', ['only' => ['index'] ]);
+Route::resource('users', 'UsersController', ['only' => ['show'] ]);
+
+Route::get('/home', 'HomeController@index');
