@@ -156,7 +156,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Grimthorr\LaravelToast\ServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
 
     ],
@@ -206,7 +205,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collectisve\Html\HtmlFacade::class,
-        'Toast' => Grimthorr\LaravelToast\Facade::class,
 
     ],
 
