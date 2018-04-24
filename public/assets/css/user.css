@@ -261,3 +261,17 @@ div.container.post {
 .row-space-4 {
   margin-bottom: 25px;
 }
+
+
+/* チェックマーク */
+.vertification-checked:before{
+  content: "\f00c";
+  font-family: FontAwesome;
+  position: relative;
+  z-index: 100;
+  top:2px;
+  font-size: 1.55em;
+  text-align: center;
+  width: 1.25em;
+  color: #00d1c1;
+}
