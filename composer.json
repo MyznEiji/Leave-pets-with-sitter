@@ -10,7 +10,8 @@
         "laravelcollective/html": "5.2",
         "roksta/toast": "^1.0",
         "grimthorr/laravel-toast": "^1.1",
-        "laracasts/flash": "^3.0"
+        "laracasts/flash": "^3.0",
+        "psy/psysh": "@stable"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

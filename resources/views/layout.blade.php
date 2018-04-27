@@ -37,12 +37,19 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right back-black">
                       @if(!Auth::check())
                       <!-- ログインしていない時 -->
+                        <li class="dropdown font-black">
+                          <a href="/listings/create">シッターになる</a>
+                        </li>
                         <li class="active" role="presentation"><a href="/login">Login </a></li>
                         <li role="presentation"><a href="/register">Sign Up </a></li>
                       @else
+                        <!-- ログインしている時 -->
+                        <li class="dropdown font-black">
+                          <a href="/listings/create">シッターになる</a>
+                        </li>
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
                             {{ Auth::user()->name }}
@@ -67,6 +74,7 @@
     </footer>
 
 
+
     <!-- bootstrap -->
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
@@ -81,7 +89,8 @@
     </script>
     <script>
       $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
-    </script>
+    </script>    
+
 
 </body>
 
