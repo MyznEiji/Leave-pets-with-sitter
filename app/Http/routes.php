@@ -21,5 +21,19 @@ Route::get('/', 'PagesController@index');
 Route::resource('pages', 'PagesController', ['only' => ['index'] ]);
 Route::resource('users', 'UsersController');
 
+Route::resource('listings', 'ListingsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit'] ]);
+Route::get('/listings/{listing_id}/basics', 'ListingsController@basics');
+Route::get('/listings/{listing_id}/description', 'ListingsController@description');
+Route::get('/listings/{listing_id}/address', 'ListingsController@address');
+Route::get('/listings/{listing_id}/price', 'ListingsController@price');
+Route::get('/listings/{listing_id}/photos', 'ListingsController@photos');
+Route::get('/listings/{listing_id}/calendar', 'ListingsController@calendar');
+Route::get('/listings/{listing_id}/bankaccount', 'ListingsController@bankaccount');
+Route::get('/listings/{listing_id}/publish', 'ListingsController@publish');
+
+Route::patch('/listings/{listing_id}/description_update', 'ListingsController@description_update');
+Route::patch('/listings/{listing_id}/price_update', 'ListingsController@price_update');
+Route::patch('/listings/{listing_id}/address_update', 'ListingsController@address_update');
+Route::patch('/listings/{listing_id}/publish_update', 'ListingsController@publish_update');
 
 Route::get('/home', 'HomeController@index');
