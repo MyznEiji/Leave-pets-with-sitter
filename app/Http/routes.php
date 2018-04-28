@@ -35,5 +35,7 @@ Route::patch('/listings/{listing_id}/description_update', 'ListingsController@de
 Route::patch('/listings/{listing_id}/price_update', 'ListingsController@price_update');
 Route::patch('/listings/{listing_id}/address_update', 'ListingsController@address_update');
 Route::patch('/listings/{listing_id}/publish_update', 'ListingsController@publish_update');
+Route::post('/listings/{listing_id}/photos_update', 'PhotosController@photos_update');
+
 
 Route::get('/home', 'HomeController@index');

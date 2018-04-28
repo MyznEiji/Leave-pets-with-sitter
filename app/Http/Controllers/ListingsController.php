@@ -26,13 +26,6 @@ class ListingsController extends Controller
   public function store(Request $request)
   {
 
-    $this->validate($request, [
-        'home_type'  => 'required',
-        'pet_type' => 'required',
-        'pet_size' => 'required',
-        'breeding_years' => 'required',
-    ]);
-
     $listing = Listing::create(
     [
       'home_type' => $request->home_type,
@@ -41,7 +34,7 @@ class ListingsController extends Controller
       'pet_size' => $request->pet_size,
       'user_id' => Auth::user()->id,
     ]);
-    return redirect("listings/{$listing->id}/edit");
+    return redirect("listings/{$listing->id}/basics");
   }
 
 
@@ -169,6 +162,11 @@ class ListingsController extends Controller
     $active_name = "photos";
     return view("listings.photos")->with(["listing" => $listing, "active_name" => $active_name]);
   }
+
+
+
+
+
 
 
   public function calendar($listing_id)

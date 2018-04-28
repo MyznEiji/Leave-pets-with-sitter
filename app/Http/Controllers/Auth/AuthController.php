@@ -7,6 +7,8 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Image; //この1行を追記
+
 
 class AuthController extends Controller
 {
@@ -52,6 +54,8 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'avatar' => 'required',
+
         ]);
     }
 
@@ -63,10 +67,15 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+      $fileName = $data['avatar']->getClientOriginalName();
+      Image::make($data['avatar'])->save(public_path() . '/images/' . $fileName);
+
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'avatar' => $fileName,
         ]);
 
 

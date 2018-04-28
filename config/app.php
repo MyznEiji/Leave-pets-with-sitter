@@ -157,6 +157,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,    // 追加
+
 
     ],
 
@@ -205,6 +207,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collectisve\Html\HtmlFacade::class,
+        'Image'     => Intervention\Image\Facades\Image::class,    // 追加
+
 
     ],
 

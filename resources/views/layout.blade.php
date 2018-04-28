@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/assets/css/user.css">
     <link rel="stylesheet" href="/assets/css/auth.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="{{ url('assets/css/dropzone/dropzone.min.css') }}" rel="stylesheet" type="text/css">
+
 
 
 
@@ -89,7 +91,20 @@
     </script>
     <script>
       $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
-    </script>    
+    </script>
+
+
+    <!-- ドロップゾーンの設定 -->
+    <script src="{{ url('assets/js/dropzone/dropzone.min.js') }}"></script>
+
+    <script type="text/javascript">
+
+    Dropzone.options.imageUpload = {
+        dictDefaultMessage: 'アップロードするファイルをここへドロップしてください',
+        acceptedFiles: '.jpg, .jpeg',
+        maxFilesize: 5 // 5MBまで
+    }
+    </script>
 
 
 </body>
