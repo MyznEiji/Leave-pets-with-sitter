@@ -50,6 +50,13 @@ class ListingsController extends Controller
   }
 
 
+  public function show($listing_id)
+  {
+    $listing = Listing::find($listing_id);
+    $photos = Listing::find($listing_id)->photos;
+    return view("listings.show")->with(["photos" => $photos, "listing" => $listing]);
+  }
+
 
 
 
