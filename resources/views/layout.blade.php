@@ -60,6 +60,7 @@
                           <ul class="dropdown-menu">
                             <li role="presentation"><a href="/users/{{ Auth::user()->id }}">Profile</a></li>
                             <li role="presentation"><a href="/users/{{ Auth::user()->id }}/edit">Profile edit</a></li>
+                            <li role="presentation"><a href="/listings">Listing Management</a></li>
                             <li role="presentation"><a href="/logout">Log Out </a></li>
                           </ul>
                         </li>

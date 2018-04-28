@@ -17,6 +17,12 @@ class ListingsController extends Controller
     if(!Auth::check()) $this->middleware('auth');
   }
 
+  public function index()
+  {
+    $listings = Auth::user()->listings;
+    return view('listings.index')->with(['listings' => $listings]);
+  }
+
   public function create()
   {
 

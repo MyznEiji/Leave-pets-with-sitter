@@ -206,7 +206,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collectisve\Html\HtmlFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
         'Image'     => Intervention\Image\Facades\Image::class,    // 追加
 
 
