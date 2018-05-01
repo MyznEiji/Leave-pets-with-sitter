@@ -37,5 +37,6 @@ Route::patch('/listings/{listing_id}/address_update', 'ListingsController@addres
 Route::patch('/listings/{listing_id}/publish_update', 'ListingsController@publish_update');
 Route::post('/listings/{listing_id}/photos_update', 'PhotosController@photos_update');
 
+Route::resource('listings.reservations', 'ReservationsController', ['only' => 'store']);
 
 Route::get('/home', 'HomeController@index');

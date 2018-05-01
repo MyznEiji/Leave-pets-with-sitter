@@ -35,7 +35,7 @@
 	<div class="row">
 		<div class="col-lg-3 col-md-4">
 			<div class="user-profile row-space-4 text-center">
-				<img class="profile-full img-circle" src="{{ Auth::user()->image }}" alt="">
+        {{ Html::image("images/{$user->avatar}",'a picture', array('class' => "profile-full img-circle")) }}
 			</div>
 
 			<div class="panel panel-default verifications hidden-xs hidden-sm">

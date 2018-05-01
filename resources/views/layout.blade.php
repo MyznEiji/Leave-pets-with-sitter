@@ -13,6 +13,18 @@
     <link href="{{ url('assets/css/dropzone/dropzone.min.css') }}" rel="stylesheet" type="text/css">
 
 
+
+    <!-- datepickerのjs,css -->
+    <!-- // JS -->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <!-- // CSS -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/assets/css/jquery-bootstrap-datepicker.css">
+
+
+
+
 </head>
 
 <body>

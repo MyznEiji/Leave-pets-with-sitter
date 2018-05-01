@@ -84,6 +84,9 @@
                     </div>
                 </div>
 
+
+
+                <!-- 予約フォーム -->
                 <div class="col-md-3">
                     <div class="panel panel-default panel-show">
                         <div class="panel-heading">
@@ -91,15 +94,32 @@
                         </div>
 
                         <div class="panel-body panel-real">
-                          {{ Form::open(['url' => '/listings', 'method' => 'post']) }}
+
+                          {{ Form::model($reservation, array('action' => array('ReservationsController@store', $listing->id))) }}
+
+
+                                <div class="row row-space-2">
+                                    <div class="col-md-6">
+                                        <label>Check In</label>
+                                          <input type="date" id="datepicker" name="start_date" value="" placeholder="開始" class="form-control">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label>Check Out</label>
+                                        <input type="date" name="end_date" value="" placeholder="終了" id="datepicker" class="form-control">
+
+                                    </div>
+                                </div>
+
                                 <div class="actions text-center">
                                   <input type="submit" value="この日程で予約する" class= "btn btn-danger btn-wide">
                                 </div>
-                          {{ Form::close() }}
-
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -108,13 +128,13 @@
 <!-- メインコンテント -->
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <h3 class="row-space-3">このリスティングについて</h3>
                 <p>{{$listing->listing_content }}{{$listing->listing_content }} {{$listing->listing_content }} {{$listing->listing_content }} {{$listing->listing_content }}
                 </p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
 
         </div>
     </div>
@@ -122,24 +142,24 @@
 
     <!-- レビュー    -->
     <div class="row">
-        <div class="col-md-8">
-            <h3 class="row-space-3">このリスティングについて</h3>
-            <p>{{ $listing->listing_content}}{{$listing->listing_content }} {{$listing->listing_content }} {{$listing->listing_content }} {{$listing->listing_content }} {{$listing->listing_content }}
-            </p>
+        <div class="col-md-9">
+            <h3 class="row-space-3">レビュー</h3>
+
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
 
         </div>
     </div>
 
     <!-- グーグルマップ -->
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
+          <h3 class="row-space-3">アクセス</h3>
           <div id="map"></div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
 
         </div>
     </div>
@@ -151,6 +171,47 @@
         width:100%;
       }
     </style>
+
+    <!-- 他のリスティング    -->
+    <div class="row">
+        <div class="col-md-9">
+            <h3 class="row-space-3">他のリスティング</h3>
+
+            @foreach($listings as $listing)
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading panel-listing text-center other-listing-pic" style="padding: 0;">
+                            <a href="listings/{{ $listing->id }}">
+                              {{ Html::image("images/{$listing->photos[0]->image}",'a picture') }}
+                            </a>
+                            <!-- <%= link_to(listing) do %>
+                                <%= image_tag listing.photos[0].image.url(:medium)  if listing.photos.length > 0 %>
+                            <% end %> -->
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-8 col-xs-8">
+                                  <p class="other-listing-text">{{ $listing->listing_title }}</p><br>
+                                </div>
+                                <div class="col-md-3 col-xs-3">
+                                  {{ Html::image("images/{$listing->user->avatar}",'a picture', array('class' => "img-circle profile-2")) }}
+                                </div>
+                                <div class="price-card">
+                                    {{ $listing->price_pernight}} 円
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+        </div>
+
+        <div class="col-md-3">
+
+        </div>
+    </div>
 
 </div>
 
@@ -192,6 +253,14 @@
    <script async defer
    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeH5of2sfELXawtWEBAzUfli37EFTs08g&callback=initMap">
    </script>
+
+
+   <script>
+     $(function() {
+         $( "#datepicker" ).datepicker({ dateFormat: "yy-mm-dd" });
+     });
+   </script>
+
 
 
 

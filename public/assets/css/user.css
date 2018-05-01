@@ -158,14 +158,15 @@ div.container.post {
 
 
 
+
 .jumbotron {
     padding-top: 0px;
     // 背景画像を暗くする
     background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05) ), url(person-845325_1920.jpg);
-	background-size: cover;
-	// 背景画像の位置を決める
-	background-position: 50% 50%;
-	height: 420px;
+  background-size: cover;
+  // 背景画像の位置を決める
+  background-position: 50% 50%;
+  height: 420px;
 }
 
 .jumbotron .container .row{
@@ -180,7 +181,7 @@ div.container.post {
 }
 
 .navbar-default .navbar-nav > li > a {
-    /* color: ; */
+    color: black;
     font-size: 13px;
 }
 
@@ -220,32 +221,30 @@ div.container.post {
     background-color: #4c66a4;
 }
 
-// プロフィール画像
-.profile-0 {
-    width: 28px;
-    height: 28px;
+// row-space類
+.row-space-top-0 {
+  margin-top: 0px;
 }
 
-.profile-1 {
-    width: 50px;
-    height: 50px;
+.row-space-top-1 {
+  margin-top: 10px;
 }
 
-.profile-2{
-    width: 100px;
-    height: 100px;
+.row-space-top-2 {
+  margin-top: 15px;
 }
 
-.profile-full {
-  width: 30%;
+.row-space-top-3 {
+  margin-top: 20px;
 }
 
-@media (min-width: 992px){
-.profile-full {
-        width: 100%;
-    }
+.row-space-top-4 {
+  margin-top: 25px;
 }
 
+.row-space-0 {
+  margin-bottom: 0px;
+}
 .row-space-1 {
   margin-bottom: 10px;
 }
@@ -259,11 +258,53 @@ div.container.post {
 }
 
 .row-space-4 {
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
+// プロフィール画像
+.profile-0 {
+    width: 28px !important;
+    height: 28px !important;
+}
 
-/* verticalnavbar.blade.phpのcss */
+.profile-1 {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.profile-2 {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.profile-full {
+  width: 30% !important;
+  height: 80px !important;
+}
+
+@media (min-width: 992px){
+.profile-full {
+        width: 100% !important;
+        height: 180px !important;
+    }
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.vertification-checked:before{
+  content: "\f00c";
+  font-family: FontAwesome;
+  position: relative;
+  z-index: 100;
+  top:2px;
+  font-size: 1.55em;
+  text-align: center;
+  width: 1.25em;
+  color: #00d1c1;
+}
+
 
 @media (min-width: 768px) {
   .sidebar-nav .navbar .navbar-collapse {
@@ -306,22 +347,28 @@ div.container.post {
     background-color: #337ab7;
 }
 
-
-
-/* チェックマーク */
-.vertification-checked:before{
-  content: "\f00c";
-  font-family: FontAwesome;
-  position: relative;
-  z-index: 100;
-  top:2px;
-  font-size: 1.55em;
-  text-align: center;
-  width: 1.25em;
-  color: #00d1c1;
+// dropzone.jsのcss
+@media (max-width: 768px){
+  .dz-preview, .dz-processing, .dz-image-preview, .dz-error, .dz-complete {
+      margin: 10px 0!important;
+      width: 100%;
+  }
+  .dropzone .dz-preview .dz-image {
+    width: 100%;
+  }
+  .dropzone .dz-preview .dz-image img {
+    height: 120px;
+  }
 }
 
+.dropzone .dz-preview .dz-image img{
+  width: 100%;
+  height: 100%;
+}
 
+.dropzone.dz-started .dz-message {
+  display: block;
+}
 
 
 // listings/indexのcss
@@ -381,7 +428,6 @@ span.listing-title {
   }
 }
 
-
 // showページのcss
 .container-listing-show {
   background-color: #fff;
@@ -418,11 +464,38 @@ span.listing-title {
   }
 }
 
+// showページの近いリスティングのcss
+.panel-listing img {
+  width: 100%;
+  height: 180px;
+}
+
+
+
+
+//showページのデスクトップcss
+@media (min-width: 992px){
+  .panel-listing img {
+  height: 160px;
+  }
+}
+
+.price-card {
+    background: rgba(60,63,64,0.9);
+    color: #fff;
+    position: absolute;
+    bottom: 125px;
+    padding: 7px 10px;
+}
+
+a {
+  color: #222;
+}
+
 body {
     color: #222;
     background-color: #F8F8F8;
 }
-
 
 
 
@@ -436,4 +509,15 @@ body {
 {
   width: 100vw;
   overflow: hidden;
+}
+
+.other-listing-pic img
+{
+  width: 100%;
+  height: 180px;
+}
+
+.other-listing-text
+{
+  margin-top: 50px;
 }

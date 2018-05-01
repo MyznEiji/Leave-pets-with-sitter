@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Http\Requests;
 use App\Listing;
+use App\Reservation;
+
 
 class ListingsController extends Controller
 {
@@ -54,7 +56,7 @@ class ListingsController extends Controller
   {
     $address = Listing::find($listing_id)->address;
 
-
+    // アドレスから緯度経度を取得
     function get_gps_from_address( $address ){
       $res = array();
       $req = 'http://maps.google.com/maps/api/geocode/xml';
@@ -71,9 +73,14 @@ class ListingsController extends Controller
 
     $address = get_gps_from_address(strval($address));
 
+
     $listing = Listing::find($listing_id);
     $photos = Listing::find($listing_id)->photos;
-    return view("listings.show")->with(["photos" => $photos, "listing" => $listing, "address" => $address ]);
+
+    $reservation = new Reservation;
+
+    $listings = Listing::where("user_id", $listing->user_id)->take(3)->get();
+    return view("listings.show")->with(["photos" => $photos, "listing" => $listing, "address" => $address, "listings" => $listings,  "reservation" => $reservation ]);
   }
 
 
