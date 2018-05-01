@@ -133,6 +133,66 @@
         </div>
     </div>
 
+    <!-- グーグルマップ -->
+    <div class="row">
+        <div class="col-md-8">
+          <div id="map"></div>
+        </div>
+
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 350px;
+        width:100%;
+      }
+    </style>
+
 </div>
+
+<script>
+     // PHP変数からJS変数に変換
+     var lathoge = <?php echo $address['lat']; ?> ;
+     var lnghoge = <?php echo $address['lng']; ?> ;
+
+
+     // グーグルマップを作成
+     function initMap() {
+       // Create the map.
+       var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 14,
+         center: {lat: lathoge, lng: lnghoge},
+         mapTypeId: 'terrain'
+       });
+
+
+       // Construct the circle for each value in citymap.
+       // Note: We scale the area of the circle based on the population.
+
+       // Add the circle for this city to the map.
+       // サークルを作成
+       var cityCircle = new google.maps.Circle({
+         strokeColor: '#FF0000',
+         strokeOpacity: 0.8,
+         strokeWeight: 2,
+         fillColor: '#FF0000',
+         fillOpacity: 0.35,
+         map: map,
+         center: {'lat': lathoge, 'lng': lnghoge},
+         radius: 500
+       });
+     }
+   </script>
+
+
+   <script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeH5of2sfELXawtWEBAzUfli37EFTs08g&callback=initMap">
+   </script>
+
+
 
 @endsection

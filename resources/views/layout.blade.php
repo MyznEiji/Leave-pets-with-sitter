@@ -13,9 +13,6 @@
     <link href="{{ url('assets/css/dropzone/dropzone.min.css') }}" rel="stylesheet" type="text/css">
 
 
-
-
-
 </head>
 
 <body>
