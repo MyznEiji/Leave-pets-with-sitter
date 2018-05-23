@@ -56,6 +56,7 @@ class ListingsController extends Controller
   {
     $address = Listing::find($listing_id)->address;
 
+
     // アドレスから緯度経度を取得
     function get_gps_from_address( $address ){
       $res = array();
@@ -78,9 +79,9 @@ class ListingsController extends Controller
     $photos = Listing::find($listing_id)->photos;
 
     $reservation = new Reservation;
-
+    $reviews = Listing::find($listing_id)->reviews;
     $listings = Listing::where("user_id", $listing->user_id)->take(3)->get();
-    return view("listings.show")->with(["photos" => $photos, "listing" => $listing, "address" => $address, "listings" => $listings,  "reservation" => $reservation ]);
+    return view("listings.show")->with(["photos" => $photos, "listing" => $listing, "address" => $address, "listings" => $listings,  "reservation" => $reservation, "reviews" => $reviews ]);
   }
 
 

@@ -141,15 +141,70 @@
 
 
     <!-- レビュー    -->
-    <div class="row">
-        <div class="col-md-9">
-            <h3 class="row-space-3">レビュー</h3>
 
-        </div>
 
-        <div class="col-md-3">
+    <div class="row row-space-4">
+      <div class="col-md-9">
+        <h3 class="row-space-3">レビュー{{count($reviews)}}件</h3>
+        <div id="average_star_rate"></div>
+        {{ Form::open(['url' => "/listings/{$listing->id}/reviews", 'method' => 'POST']) }}
 
-        </div>
+
+          <div id="rate_stars"></div>
+
+          <div class="form-group">
+            <textarea class="form-control" cols="30" name="description" placeholder="description" rows="1"></textarea>
+          </div>
+
+          <div class="actions">
+            <input type="submit" value="このシッターを評価する" class= "btn btn-danger">
+          </div>
+          {{ Form::close() }}
+
+
+
+          @if (count($reviews) == 0)
+            <div class="text-center">
+              <h4>There is no review yet</h4>
+            </div>
+          @else
+            @foreach($reviews as $review)
+              <hr>
+              <div class="row">
+                <div class="col-md-2 text-center">
+                  {{ Html::image("images/{$listing->user->avatar}",'a picture', array('class' => "img-circle profile-1")) }}
+
+                  <div class="row">
+                    {{ $review->user->name }}
+                  </div>
+                </div>
+                <div class="col-md-10">
+                  <div class="row-space-1">
+                    {{ $review->description }}
+                  </div>
+
+                  <div>
+                    {{ $review->created_at }}
+                  </div>
+
+                  <div>
+                    <span class="pull-right">
+                      @if(Auth::user()->id == $review->user->id )
+                        <a href="/listings/{{$listing->id}}/reviews/{{$review->id}}">削除</a>
+                      @endif
+
+                    </span>
+                  </div>
+                </div>
+              </div>
+            @endforeach
+          @endif
+
+      </div>
+
+      <div class="col-md-3">
+
+      </div>
     </div>
 
     <!-- グーグルマップ -->

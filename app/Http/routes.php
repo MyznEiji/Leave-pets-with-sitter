@@ -20,6 +20,8 @@ Route::Auth();
 Route::get('/', 'PagesController@index');
 Route::resource('pages', 'PagesController', ['only' => ['index'] ]);
 Route::resource('users', 'UsersController');
+Route::resource('listings.reviews', 'ReviewsController', ['only' => ['store'] ]);
+
 
 Route::resource('listings', 'ListingsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit'] ]);
 Route::get('/listings/{listing_id}/basics', 'ListingsController@basics');
@@ -31,6 +33,8 @@ Route::get('/listings/{listing_id}/bankaccount', 'ListingsController@bankaccount
 Route::get('/listings/{listing_id}/publish', 'ListingsController@publish');
 Route::get('/reservations', 'ReservationsController@index');
 Route::get('/reserved', 'ReservationsController@reserved');
+Route::get('/listings/{listing_id}/reviews/{review_id}', 'ReviewsController@destroy');
+
 
 
 Route::patch('/listings/{listing_id}/description_update', 'ListingsController@description_update');
