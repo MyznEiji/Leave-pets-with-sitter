@@ -11,6 +11,20 @@ use Auth;
 
 class ReservationsController extends Controller
 {
+    public function index()
+    {
+      $reservations = Auth::user()->reservations;
+
+      return view("reservations.index")->with("reservations", $reservations);
+    }
+
+    public function reserved()
+    {
+      $listings = Auth::user()->listings;
+      return view("reservations.reserved")->with("listings", $listings);
+    }
+
+
     public function store($listing_id, Request $request)
     {
       //***************************************

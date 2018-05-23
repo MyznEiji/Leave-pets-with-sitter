@@ -206,16 +206,6 @@ class ListingsController extends Controller
 
 
 
-
-
-  public function calendar($listing_id)
-  {
-    $listing= Listing::find($listing_id);
-    $active_name = "calendar";
-    return view("listings.calendar")->with(["listing" => $listing, "active_name" => $active_name]);
-  }
-
-
   public function bankaccount($listing_id)
   {
     $listing= Listing::find($listing_id);

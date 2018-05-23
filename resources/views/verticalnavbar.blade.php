@@ -18,9 +18,8 @@
                 <li id="address" class=""><a href="/listings/{{ $listing->id }}/address">住所情報</a></li>
                 <li id="price" class=""><a href="/listings/{{ $listing->id }}/price">料金</a></li>
                 <li id="photos" class=""><a href="/listings/{{ $listing->id }}/photos">写真</a></li>
-                <li id="calendar" class=""><a href="/listings/{{ $listing->id }}/calendar">カレンダー</a></li>
                 <li id="bankaccount" class=""><a href="/listings/{{ $listing->id }}/bankaccount">受取口座情報</a></li>
-                <li id="publish" class=""><a href="/listings/{{ $listing->id }}/publish">後悔する</a></a></li>
+                <li id="publish" class=""><a href="/listings/{{ $listing->id }}/publish">公開する</a></a></li>
               </ul>
             </div><!--/.nav-collapse -->
           </div>

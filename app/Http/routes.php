@@ -27,9 +27,11 @@ Route::get('/listings/{listing_id}/description', 'ListingsController@description
 Route::get('/listings/{listing_id}/address', 'ListingsController@address');
 Route::get('/listings/{listing_id}/price', 'ListingsController@price');
 Route::get('/listings/{listing_id}/photos', 'ListingsController@photos');
-Route::get('/listings/{listing_id}/calendar', 'ListingsController@calendar');
 Route::get('/listings/{listing_id}/bankaccount', 'ListingsController@bankaccount');
 Route::get('/listings/{listing_id}/publish', 'ListingsController@publish');
+Route::get('/reservations', 'ReservationsController@index');
+Route::get('/reserved', 'ReservationsController@reserved');
+
 
 Route::patch('/listings/{listing_id}/description_update', 'ListingsController@description_update');
 Route::patch('/listings/{listing_id}/price_update', 'ListingsController@price_update');

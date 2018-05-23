@@ -24,7 +24,6 @@
 
 
 
-
 </head>
 
 <body>
@@ -67,10 +66,12 @@
                             <span class="caret"></span>
                           </a>
                           <ul class="dropdown-menu">
-                            <li role="presentation"><a href="/users/{{ Auth::user()->id }}">Profile</a></li>
-                            <li role="presentation"><a href="/users/{{ Auth::user()->id }}/edit">Profile edit</a></li>
-                            <li role="presentation"><a href="/listings">Listing Management</a></li>
-                            <li role="presentation"><a href="/logout">Log Out </a></li>
+                            <li role="presentation"><a href="/users/{{ Auth::user()->id }}">プロフィール</a></li>
+                            <li role="presentation"><a href="/users/{{ Auth::user()->id }}/edit">プロフィールを編集</a></li>
+                            <li role="presentation"><a href="/listings">リスティング管理</a></li>
+                            <li role="presentation"><a href="/reservation">ペットを預ける</a></li>
+                            <li role="presentation"><a href="/reserved">シッター予定</a></li>
+                            <li role="presentation"><a href="/logout">ログアウト</a></li>
                           </ul>
                         </li>
                       @endif
